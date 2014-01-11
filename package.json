@@ -1,0 +1,17 @@
+{
+	"name": "aapo.kii.so",
+	"version": "0.1.0",
+	"description": "Aapo Kiiso's personal website.",
+	"keywords": "aapo kiiso, aapo, kiiso, website",
+	"homepage": "http://aapo.kii.so",
+	"author": {
+		"name": "Aapo Kiiso",
+		"email": "aapo@kii.so",
+		"url": "http://aapo.kii.so"
+	},
+	"private": true,
+	"dependencies": {
+		"express": "3.4.x",
+		"jade": "1.0.x"
+	}
+}
