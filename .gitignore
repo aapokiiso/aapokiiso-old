@@ -42,4 +42,6 @@ Thumbs.db
 
 # Custom ignores #
 ##################
+public/sass/.sass-cache/
+public/css/
 node_modules/
