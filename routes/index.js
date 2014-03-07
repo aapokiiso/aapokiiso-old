@@ -2,14 +2,6 @@
 /*    ~ ROUTES ~    */
 /* ---------------- */
 
-/* ------------------ */
-/*    Dependencies    */
-/* ------------------ */
-
-/* ------------ */
-/*    Routes    */
-/* ------------ */
-
 module.exports = function(app){
 	
 	/**
@@ -21,7 +13,7 @@ module.exports = function(app){
 	app.get(
 		'/', 
 		function(req, res){
-			res.render('index', { title: "Aapo Kiiso" });
+			res.render('landing', { title: "Aapo Kiiso" });
 		}
 	);
 	

@@ -1,3 +1,0 @@
-require(['initialize'], function($){
-	
-});

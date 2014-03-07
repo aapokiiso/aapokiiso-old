@@ -1,0 +1,64 @@
+@import "normalize";
+
+body{
+	background: #1A242E;
+}
+
+#wrapper{
+	max-width: 480px;
+}
+
+@media #{$media-small}{
+	#wrapper{
+		margin: 20px 10px;
+	}
+}
+
+@media #{$media-large}{
+	#wrapper{
+		margin: 40px;
+	}
+}
+
+#name{
+	line-height: 3.8em;
+	overflow: hidden;
+
+	h2{
+		font-size: 2.5em;
+		font-weight: bold;
+		color: #929ca6;
+	}
+
+	h1{
+		font-size: 4em;
+		font-weight: bold;
+		color: #fff;
+		margin-left: -4px;
+	}
+
+	hr{
+		float: left;
+		width: 60%;
+		height: 3px;
+		margin: 20px 0;
+		background: #fff;
+	}
+}
+
+#content{
+	line-height: 1.5em;
+
+	p{
+		color: #b7c3ce;
+		margin-bottom: 20px;
+	}
+
+	a{
+		color: #fff;
+	}
+
+	a:hover{
+		text-decoration: underline;
+	}
+}

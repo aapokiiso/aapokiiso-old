@@ -1,0 +1,27 @@
+extends includes/layout
+
+block css
+	link(href="/css/landing/index.css", rel="stylesheet", type="text/css")
+
+block js
+	script(data-main="app/landing/index", src="/js/require.js")
+	
+block content
+	div#wrapper
+	
+		header#name
+			h2 Aapo
+			h1 Kiiso
+			hr
+
+		section#content
+
+			p.
+				I'm a web developer. 
+				
+			p.
+				I'm currently working on <a href="http://skibb.it" target="_blank">Skibb</a>, 
+				a collaborative problem solving platform. Be sure to check it out!
+
+			p
+				a(href="mailto:aapo@kii.so") aapo@kii.so
