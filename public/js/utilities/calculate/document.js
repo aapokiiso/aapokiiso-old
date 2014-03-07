@@ -1,10 +1,5 @@
 define(function(require){
 
-	var calculate = {
-		menu: require('utilities/calculate/menu'),
-		overlays: require('utilities/calculate/overlays')
-	};
-
 	/**
 	*	function doc()
 	*	This function is the global document resizeultation function, 
@@ -14,8 +9,7 @@ define(function(require){
 	*/
 
 	function doc(){
-		calculate.menu();
-		calculate.overlays();
+		
 	}
 
 	return doc;

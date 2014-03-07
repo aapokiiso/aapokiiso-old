@@ -1,10 +1,10 @@
 extends includes/layout
 
 block css
-	link(href="/css/landing/index.css", rel="stylesheet", type="text/css")
+	link(href="/css/app/landing/index.css", rel="stylesheet", type="text/css")
 
 block js
-	script(data-main="app/landing/index", src="/js/require.js")
+	script(data-main="app/landing/index", src="/js/vendor/require.js")
 	
 block content
 	div#wrapper
@@ -21,7 +21,9 @@ block content
 				
 			p.
 				I'm currently working on <a href="http://skibb.it" target="_blank">Skibb</a>, 
-				a collaborative problem solving platform. Be sure to check it out!
+				a collaborative problem solving platform. 
+				It's core idea is to break the problems down into smaller parts, and then solve those parts individually. 
+				This way none of the collaborators have to know a solution for the whole problem - knowing even something helps!
 
 			p
 				a(href="mailto:aapo@kii.so") aapo@kii.so
