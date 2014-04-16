@@ -55,5 +55,5 @@ app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 /* ------------------ */
 
 var server = http.createServer(app).listen(app.get('port'), function(){
-	console.log('http://aapo.kii.so now up and running!');
+	console.log('http://aapo.kii.so now up and running on port ' + app.get('port') + '!');
 });
