@@ -1,19 +1,21 @@
 /**
-*	Dependencies
+*  Dependencies
 */
 
 @import "compass/css3";
-@import "vendor/sass-import-once";
 @import "vendor/reset";
 
 /**
-*	Global variables
+*  Global variables
 */
 
-//Fonts
-$base-font: 'Open Sans', sans-serif;
-$title-font: 'Montserrat', Helvetica;
+/* Fonts */
+$title-font: "Roboto", "Helvetica", sans-serif;
+$base-font: "Open Sans", "Helvetica", sans-serif;
 
-//Media queries
+/* Ratios */
+$golden-ratio: 1.618;
+
+/* Media queries */
 $media-small: "screen and (max-width : 480px)";
 $media-large: "screen and (min-width : 481px)";

@@ -6,9 +6,9 @@
 *	Path descriptions:
 *	
 *	/app/ contains main application js.
-*	/comps/ contains js for different components.
-*	/lib/ contains external libraries.
-*	/util/ contains utility function collections.
+*	/components/ contains js for different components.
+*	/vendor/ contains external libraries.
+*	/utilities/ contains utility function collections.
 */
 
 /* ------------------- */
@@ -19,17 +19,17 @@
 *	Applies for non-IE (well actually >= IE9) browsers. 
 */
 
-var jquery_source = "//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min";
+var jquery_source = "//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min";
 
 var bodyclass = document.documentElement.className;
 
-if(bodyclass.indexOf('ie') >= 0){
+if(bodyclass.indexOf('old_IE') >= 0){
 
 	/**
-	*	Applies for IE8 and below, since jQuery 2.x supports IE only from IE9 upwards.
+	*	Applies for older IEs (IE8 and below), since jQuery 2.x supports IE only from IE9 upwards.
 	*/
 
-	jquery_source = "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min";	
+	jquery_source = "//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min";	
 
 }
 

@@ -6,21 +6,26 @@ head
 	meta(name="description", content="Aapo Kiiso's personal website.")
 	meta(name="author", content="Aapo Kiiso")
 	meta(name="distribution", content="web")
+	meta(http-equiv="Content-Language", content="en")
 	
 	//Favicon
 
-	link(rel="icon", type="image/png", href="/img/favicon.png")
+	<!-- IE -->
+	link(rel="shortcut icon", type="image/x-icon", href="/img/favicon.ico")
+	<!-- other browsers -->
+	link(rel="icon", type="image/x-icon", href="/img/favicon.ico")
 	
 	//Title
 
 	- if(! title) title = "Aapo Kiiso"
+	- else title += " | Aapo Kiiso"
 
-	title #{title} | Aapo Kiiso
+	title #{title}
 
 	//Fonts
 
-	link(rel="stylesheet", href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", type="text/css")
-	link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:400,700|Montserrat:400,700", type="text/css")
+	link(rel="stylesheet", href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", type="text/css")
+	link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Roboto:700|Open+Sans:400,600,700", type="text/css")
 
 	//Stylesheet
 

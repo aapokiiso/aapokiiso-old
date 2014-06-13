@@ -13,11 +13,11 @@ define(function(require){
 	/* ------------------ */
 
 	var $ = require('jquery');
-	var plugins = require('plugins');
+	require('plugins');
 
 	var calculate = {
 		document: require('utilities/calculate/document')
-	}
+	};
 
 	/* ---------------------------- */
 	/*    Document init & resize    */

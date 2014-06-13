@@ -4,44 +4,40 @@
 
 @import "includes/init";
 
-@include exports('normalize'){
-		
-	*{
-		font-family: $base-font;
-	}
-	
-	h1, h2, h3, h4, h5, h6{
-		font-family: $title-font;
-	}
+/**
+*	General style normalization.
+*/
 
-	li{
-		list-style-type: none;
-	}
-	
-	hr{
-		height: 1px;
-		background: #ddd;
-		border: 0;
-	}
+body{
+	position: relative;
+	font-family: $base-font;
+	font-size: 16px;
+}
 
-	a{
-		text-decoration: none;
-	}
-	
-	i{
-		position: relative;
-	}
-	
-	.loader{
-		text-align: center;
-		margin: 10px auto;
-	}
-		
+h1, h2, h3, h4, h5, h6{
+	font-family: $title-font;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style-type: none;
+}
+
+hr{
+	height: (1/8)+0em;
+	background: #666;
+	border: 0;
+}
+
+i{
+	position: relative;
 }
 
 /**
-*	Include components
+*	Include generic styles and component styles.
 */
 
 @import "includes/clearfix";
-@import "components/buttons";
