@@ -1,0 +1,20 @@
+body {
+  background-color: #fff;
+}
+
+#content {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+#foreword {
+  font-style: italic;
+}
+
+/* Responsive styles */
+
+@media (min-width: 1200px) {
+  #content {
+    margin-top: 5%;
+  }
+}
