@@ -60,6 +60,4 @@ node_modules
 
 # Custom ignores #
 ##################
-public/sass/.sass-cache
-public/js/templates
-public/css
+.idea/
