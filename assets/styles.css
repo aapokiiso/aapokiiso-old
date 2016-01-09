@@ -16,5 +16,6 @@ body {
 @media (min-width: 1200px) {
   #content {
     margin-top: 5%;
+    margin-bottom: 5%;
   }
 }
