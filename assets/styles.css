@@ -3,7 +3,7 @@ body {
 }
 
 #content {
-  max-width: 480px;
+  max-width: 30em;
   margin: 0 auto;
 }
 
