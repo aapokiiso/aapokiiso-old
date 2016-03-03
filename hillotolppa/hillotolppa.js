@@ -39,22 +39,34 @@ function Hillotolppa(character) {
   "use strict";
 
   this.character = character;
-  console.log(this.character);
+  this.loop = null;
 }
 
-Hillotolppa.prototype.initialize = function(){
+Hillotolppa.prototype.initialize = function () {
   "use strict";
 
   /** @type {HTMLElement} */
   var characterSelectionElement;
+  /** @type {Hillotolppa} */
+  var context;
 
+  context = this;
   characterSelectionElement = document.getElementById('character-selection');
 
   // Hide character selection
   characterSelectionElement.classList.add('is-complete');
   setTimeout(function () {
     characterSelectionElement.parentNode.removeChild(characterSelectionElement);
+    context.initializeLoop();
   }, 100);
+};
+
+Hillotolppa.prototype.initializeLoop = function () {
+  "use strict";
+
+  this.loop = setInterval(function () {
+    console.log('asd');
+  }, 1);
 };
 
 /*
