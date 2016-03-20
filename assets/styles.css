@@ -11,6 +11,10 @@ body {
   font-style: italic;
 }
 
+figure img {
+  max-width: 100%;
+}
+
 /* Responsive styles */
 
 @media (min-width: 1200px) {
