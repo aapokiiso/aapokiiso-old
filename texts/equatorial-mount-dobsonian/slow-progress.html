@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Slow progress - Building an equatorial mount for a Dobsonian-mounted telescope - Aapo Kiiso</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Article series detailing the process of building an equatorial mount for a Dobsonian-mounted telescope." />
+    <meta name="keywords" content="aapo kiiso,programming,astronomy" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta property="og:site_name" content="Aapo Kiiso" />
+    <meta property="og:title" content="Slow progress - Building an equatorial mount for a Dobsonian-mounted telescope" />
+    <meta property="og:image" content="http://aapo.kii.so/assets/images/aapokiiso.jpg" />
+    <meta property="og:url" content="http://aapo.kii.so/texts/equatorial-mount-dobsonian/slow-progress.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:published_time" content="2016-03-20T17:00:00.00Z" />
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<main id="content">
+    <h1>Building an equatorial mount for a Dobsonian-mounted telescope - Slow progress</h1>
+    <p id="published_on">Published on <time datetime="2016-03-20T17:00:00.00Z">3rd of March, 2016</time>.</p>
+    <a href="/">Back to index</a>
+    <section id="foreword">
+        <p>In this article series, I'm trying to build a working equatorial mount for a 10" Dobsonian telescope.</p>
+        <ol id="previous"></ol>
+    </section>
+    <section id="slow-progress">
+        <p>I was hoping I would be much further with this project by now, but as usual, time and laziness
+        got the best of me. I got a bit overwhelmed by the scale of this project, and kept thinking I would be work on it
+        "next weekend". But now that spring has begun to push winter out of its way, I've got some newfound motivation
+        towards finishing this project. Or rather to start it for real.</p>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/slow-progress/initial-plan.jpg" alt="A sketch of the initial plan">
+            <figcaption>My initial plan involved a layer to keep the telescope centered - I later realized centering
+            would not be required as long as the telescope was always crossing the center axis of the mount.</figcaption>
+        </figure>
+        <p>Couple weeks ago I started to really think how I would go about building the mount. My first idea was to go all in
+        on the automation. I thought of having the angle towards Polaris calculated with a GPS sensor and using a stepper motor to lift the base to the desired angle.
+        I also thought I'd have to position the telescope to the center axis with an extra plywood layer and a set of wheels (seen in the sketch above),
+        but luckily I realized I only would have to have the telescope <strong>cross</strong> the center axis (at all times) to avoid any image bluriness.
+        In addition the mount would of course spin to counteract the Earth's rotation.</p>
+        <p>But reality is a bitch, and I realized I don't have any experience in mechanical engineering or electronics.
+        All of the automation would also cost much more, and be more likely to fail compared to a more simple solution.</p>
+        <p>I landed back to reality, and decided to keep it simple, at least for the start.</p>
+    </section>
+    <section id="final-plan">
+        <h2>Final plan</h2>
+        <figure>
+            <img src="" alt="Sketch of the final plan">
+        </figure>
+        <p>The mount will have 3 round layers of plywood, each 60cm in diameter. The Dobsonian mount of the telescope
+        is 56cm in diameter, so 60cm will leave a generous 2cm of padding on sides of the telescope. One of the
+        goals of this project is to build a plug-and-play mount, so that I wouldn't have to modify the existing Dobsonian
+        mount of the telescope. That way, I can still use the original mount for traditional viewing, while coupling it
+        with the new-built equatorial mount for astrophotography.</p>
+        <p>Initially, the only motorized part will be the second layer,
+        which will be responsible of spinning the topmost layer in sync with the Earth's rotation.
+        Later on, I am hoping to add automatic tilting towards Polaris, and maybe even
+        a keypad / locating software for locating objects in the sky automatically.</p>
+        <h3>1st layer</h3>
+        <p>The first layer is merely a base layer, responsible for keeping the mount nice and steady. It will have
+        4 padded feet to keep the mount slightly off the ground.</p>
+        <p>Between the 1st and 2nd layer, there will be an adjustable "metal rod" (for lack of a better term),
+        which will allow setting the mount to the desired angle towards Polaris. The 1st and 2nd layers will
+        be separated with a piano hinge to allow setting angle.</p>
+        <h3>2nd layer</h3>
+        <p>The second layer is basically where all the magic's at. It will house all electronics and the gearbox
+        on its center, and it will have wheels on its edges to allow for rotation. In its dead center there will be
+        a metal rod rotated by the stepper motor and gears, which is attached to the 3rd and final layer. The metal rod
+        will cause the rotation of the mount alongside the wheels.</p>
+        <h3>3rd layer</h3>
+        <p>Like the 1st layer, the 3rd layer is mostly a support layer. It will have snug footholes for the telescope's Dobsonian mount's
+        feet, so that the telescope wont slide off the equatorial mount when it is tilted towards the North star.</p>
+    </section>
+    <section id="going-forward">
+        <p>Now that the plan has more or less solidified, I will start working on the motorized rotation, which I will
+        discuss in the next post. Below are some early prototyping results.</p>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/slow-progress/parts.jpg" alt="Components and tools ordered from Sparkfun.com">
+            <figcaption>Components and tools ordered from Sparkfun.com. Stepper motors, jumper wires, a breadboard, and motor drivers (EasyDriver).
+            I also got soldering equipment from Verkkokauppa.com, and a claw for holding circuits while soldering from a local electronics shop (Bebek).</figcaption>
+        </figure>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/slow-progress/prototyping.jpg" alt="Early prototyping">
+            <figcaption>I used one whole evening battling trying to get the motor spinning. I was sure I had accidentally
+            fried the EasyDriver, but then by chance I tried to power the circuit through the Arduino's power jack instead of plugging power
+            straight to the EasyDriver, and it started working. I'm sure the problem was with the current, as I had
+            connected a 1000mA power source the EasyDriver, but had a 2250mA power source for the Arduino.</figcaption>
+        </figure>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/slow-progress/working-schematic.jpg" alt="The schematic that got it working.">
+            <figcaption>Schematic I used to finally get it working. The crucial thing was using a >2000mA power source.
+            <a href="https://www.sparkfun.com/tutorials/400">SparkFun source for schematic.</a></figcaption>
+        </figure>
+        <figure>
+            <video src="/assets/videos/equatorial-mount-dobsonian/slow-progress/working-prototype.webm" muted autoplay loop>
+                Seems like your browser doesn't support playing this video :/
+            </video>
+            <p>Short video of working prototype!</p>
+        </figure>
+    </section>
+    <a href="/">Back to index</a>
+</main>
+</body>
+</html>
