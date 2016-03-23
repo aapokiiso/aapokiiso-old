@@ -56,51 +56,64 @@
         <p>I ran the script with the desired period of 86164 seconds, and a maximum gear ratio of 7,
         since that would give us a gear of 17.5cm in diameter, which is large but borderline acceptable.</p>
         <p>
-            <code>
-                Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 7
-                2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 7
-                86016 (diff: -148)
-            </code>
+            <pre>
+Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 7
+2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 7
+86016 (diff: -148)
+            </pre>
         </p>
         <p>86016 seconds! While it still has an error of over 2 minutes (148 seconds),
         it is 37.2% more accurate than the 236 seconds of error with 86400s. So I've decided
-        to go with 86016 as the mount's rotation period.</p>
-        <p>Here are some alternative option with different gear ratios:
-            <code>
-                Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 4
-                2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3
-                82944 (diff: -3220)
-            </code>
-            <code>
-                Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 6
-                2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 5, 5
-                86400 (diff: 236)
-            </code>
-            <code>
-                Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 10
-                2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 7
-                86016 (diff: -148)
-            </code>
-            <code>
-                Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 11
-                2, 2, 2, 2, 2, 5, 7, 7, 11
-                86240 (diff: 76)
-            </code>
-            <code>
-                Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 17
-                2, 3, 5, 13, 13, 17
-                86190 (diff: 26)
-            </code>
-            <code>
-                Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 19
-                2, 2, 2, 3, 3, 3, 3, 7, 19
-                86184 (diff: 20)
-            </code>
-            <code>
-                Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 50
-                3, 13, 47, 47
-                86151 (diff: -13)
-            </code>
+        to go with 86016s as the mount's rotation period.</p>
+        <p>Here are some alternative option with different gear ratios:</p>
+        <p>
+            <pre>
+Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 4
+2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3
+82944 (diff: -3220)
+            </pre>
+        </p>
+        <p>
+            <pre>
+Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 6
+2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 5, 5
+86400 (diff: 236)
+            </pre>
+        </p>
+        <p>
+            <pre>
+Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 10
+2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 7
+86016 (diff: -148)
+            </pre>
+        </p>
+        <p>
+            <pre>
+Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 11
+2, 2, 2, 2, 2, 5, 7, 7, 11
+86240 (diff: 76)
+            </pre>
+        </p>
+        <p>
+            <pre>
+Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 17
+2, 3, 5, 13, 13, 17
+86190 (diff: 26)
+            </pre>
+        </p>
+        <p>
+            <pre>
+Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 19
+2, 2, 2, 3, 3, 3, 3, 7, 19
+86184 (diff: 20)
+            </pre>
+        </p>
+        <p>
+            <pre>
+Frying-Pan:~ aapokiiso$ ./optimalfactors 86164 50
+3, 13, 47, 47
+86151 (diff: -13)
+            </pre>
         </p>
     </section>
     <a href="/">Back to index</a>
