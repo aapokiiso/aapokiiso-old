@@ -1,1 +1,1 @@
-http://aapo.kii.so.
+http://aapo.kii.so
