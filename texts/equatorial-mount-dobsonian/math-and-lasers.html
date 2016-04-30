@@ -37,7 +37,7 @@
         </ol>
     </section>
 
-    <section id="backtracking">
+    <section id="motor-period">
         <p>
             As with any project, there's going to be some backtracking, and this one is definitely not an
             exception to the rule. My original plan of using a set of variable gear ratios to achieve the rotation speed
@@ -58,14 +58,14 @@
             be exactly that 8.6164s. Here's the way to do it:
         </p>
         <p>
-            <pre>((43ms * 200 + 16ms) * 10 + 4ms) / 10rotations => 86164ms/10r = 86.164s/10r = 8.6164s/r</pre>
+            <pre>((43ms * 200 + 16ms) * 10 + 4ms) / 10rotations = 86164ms/10r = 86.164s/10r = 8.6164s/r</pre>
         </p>
         <p>
             We assume that the stepper motor has 200 steps. By having each step take 43ms, 10 rotations
-            will take <pre>43ms * 200 * 10= 86000ms</pre>, so 1 rotation averages to 8600ms. That's
+            will take <pre>43ms * 200 * 10 = 86000ms</pre> to complete, so 1 rotation averages to 8600ms. That's
             already very close to our target average of 8616.4ms (8.6164s). All we need now is some
             calibration. By adding 16ms to each rotation (so to every 200th step), we get
-            <pre>86000ms + 16ms * 10 = 86160ms</pre> (16ms is of course also multiplied by 10 here as we are
+            <pre>86000ms + 16ms * 10 = 86160ms</pre>. 16ms is of course also multiplied by 10 here as we are
             averaging to 10 rotations. Then we just need to add a 4ms delay after every 10 rotations, and
             we are at 86164ms per 10 rotations!
         </p>
@@ -73,9 +73,21 @@
             The base delay of each step (43ms) was found via trial and error, and could be virtually anything,
             as long as you adjust your calibrations accordingly. I just found this to be the easiest way for me.
             You should also divide all calibration delays as evenly as possible per the 10 rotations to not get
-            any jankyness to your mount's rotation. For a complete solution, you can find my script
+            any jankyness to your mount's rotation. You can find my complete solution
             <a href="https://github.com/aapokiiso/equatorial-mount/blob/master/arduino/equatorial-mount.ino">here</a>.
-            The relevant rotation delays are in <pre>loop()</pre> method in the end of the file.
+            The relevant rotation delays are in the <pre>loop()</pre> method in the end of the file.
+        </p>
+    </section>
+    <section id="designing-gears">
+        <h2>Designing the gears</h2>
+        <p>
+            With the precise 8.8164s motor rotation period we just need 4 pairs of 1:10 gears to achieve
+            a 86164s rotation period for the mount itself. The problem for me was that I don't own any CAD program,
+            and don't indend to own in the future, so designing the gears without actually involving pen and paper
+            was gonna be the next problem to solve.
+        </p>
+        <p>
+            After a bit of googling
         </p>
     </section>
 
