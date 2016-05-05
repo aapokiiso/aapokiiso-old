@@ -83,12 +83,69 @@
         <p>
             With the precise 8.8164s motor rotation period we just need 4 pairs of 1:10 gears to achieve
             a 86164s rotation period for the mount itself. The problem for me was that I don't own any CAD program,
-            and don't indend to own in the future, so designing the gears without actually involving pen and paper
+            and don't indend to own one in the future, so designing the gears without actually involving pen and paper
             was gonna be the next problem to solve.
         </p>
         <p>
-            After a bit of googling
+            After a bit of googling and <a href="http://graphicdesign.stackexchange.com/questions/31584/how-can-i-create-working-gears-in-illustrator">overflowing the stack</a>,
+            I found <a href="http://woodgears.ca/gear_cutting/template.html">a promising web tool</a> for creating gear templates.
+            The tool provided by <a href="http://woodgears.ca/">woodgears.ca</a> allowed me to play around with different gear ratios
+            and see what kind of practical problems different ratios would cause. I knew I had to get a ratio of 1:10 for the
+            2 gears in each pairs, so my options were basically 4:40, 5:50, 6:60 etc. You can actually input a 2:20 ratio to
+            the website, but that kind of gear pair just looks <a href="/assets/images/equatorial-mount-dobsonian/math-and-lasers/twototwenty.png">plain silly</a>.
         </p>
+        <p>
+            Eventually I settled on a 6:60 ratio. 5:50 would've been okay too, but with a 8mm shaft diameter the
+            structure of the smaller gear in a 5:50 pair would have been very weak. I didn't touch tooth spacing, contact angle
+            or any of the more advanced options, as I didn't understand their repercussions and trusted the default config was fine.
+            The only things I set were "Gear 1 teeth" (5), "Gear 2 teeth" (50) and "Shaft hole dia." (8mm).
+        </p>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/math-and-lasers/woodgears-config.png" alt="Image of the final gear config outlined in the previous paragraph.">
+            <figcaption>Here's a screenshot of the final config at woodgears.ca/gear_cutting/template.html</figcaption>
+        </figure>
+        <p>
+            I was surprised how easy it had been to get to this point in the gear design process. Before finding woodgears.ca, I had a
+            brief dead end as I was figuring out a way to install AutoCAD Inventor on a VirtualBox Windows image (I don't currently own any real Windows devices), but luckily
+            I got to avoid a hasty crash-course into CAD design. Maybe another time, when I can actually afford the license. Now, as I had the final gear design ready,
+            I was able to move on to realising the gears into flesh.
+        </p>
+    </section>
+    <section id="printing-gears">
+        <p>
+            Laser-cutting was the obvious choice for me. Acrylic, which is a number 1 choice in many laser cut studios, is hard and strong,
+            and suited my gear design perfectly. I knew of a good laser-cutting studio in the Kallio area of Helsinki, simple called <a href="http://www.lasercutstudio.com/">Laser Cut Studio</a>,
+            so finding a location wasn't a problem either. And best of all: for this one, integral part of the project I could just sit back and
+            trust the professionals.
+        </p>
+        <p>
+            Sadly I can't submit a website for lasercutting, so I still had to figure out a way to get the design from
+            woodgears.ca into a cutter-readable, Adobe Illustrator file (.ai). Woodgears.ca has an option to print the gear design,
+            but unfortunately that didn't cut it for me (no pun intended). Another problem was that the bigger gear wasn't completely visible in the design,
+            as it was overflowing from the &smt;canvas&lgt; element it was drawn on. So I had to somehow enlargen the canvas size and then
+            get the drawn paths out of the canvas into a format Illustrator understands.
+        </p>
+        <p>
+            Eventually I was able to plug the awesome <a href="https://github.com/gliffy/canvas2svg">canvas2svg</a> JS library into
+            the woodgears.ca <a href="http://woodgears.ca/gear_cutting/gear.js">gear.js</a>. I extracted the SVG markup through the dev
+            console and placed it into its own SVG file. You can this woodgears.ca SVG support rewrite and the final gears
+            in my <a href="https://github.com/aapokiiso/equatorial-mount/tree/master/lib/gear-ratios">GitHub</a>.
+        </p>
+        <p>
+            Now I just needed to paste the generated SVG files into Illustrator and I was good to go. Luckily I hadn't
+            used my 1-month Illustrator trial period, so I was actually able to do this part for free. I checked the acrylic sheet size from
+            the laser cut studio's website, and created a new Illustrator artboard accordingly (1000mm x 600mm). Most of the artboard
+            was filled with the large gears, which have a 294mm diameter. The rest of the space I simply filled with
+            as many of the smaller gears (36mm) as possible. I've made the resulting Illustrator file <a href="https://github.com/aapokiiso/equatorial-mount/blob/master/lib/gear-ratios/gears.ai">here</a>.
+        </p>
+        <p>
+            Working with the Kallio Laser Cut Studio was a breeze. After some back-and-forth questions, my cut job
+            was completed in a week's time, with a price tag of around 100€. Below you can see the final result.
+        </p>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/math-and-lasers/final-gears.jpg" alt="Image of the cut gears, showing both the bigger and smaller ones.">
+            <figcaption>The final, cut gears!</figcaption>
+        </figure>
     </section>
 
     <p><a href="/texts/equatorial-mount-dobsonian/grinding-gears.html">Building an equatorial mount for a Dobsonian telescope - Grinding gears (Part 5)</a></p
