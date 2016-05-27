@@ -81,13 +81,13 @@
     <section id="designing-gears">
         <h2>Designing the gears</h2>
         <p>
-            With the precise 8.8164s motor rotation period we just need 4 pairs of 1:10 gears to achieve
+            With the precise 8.6164s motor rotation period we just need 4 pairs of 1:10 gears to achieve
             a 86164s rotation period for the mount itself. The problem for me was that I don't own any CAD program,
             and don't indend to own one in the future, so designing the gears without actually involving pen and paper
-            was gonna be the next problem to solve.
+            was going to be the next problem to solve.
         </p>
         <p>
-            After a bit of googling and <a href="http://graphicdesign.stackexchange.com/questions/31584/how-can-i-create-working-gears-in-illustrator">overflowing the stack</a>,
+            After a bit of googling and <a href="http://graphicdesign.stackexchange.com/questions/31584/how-can-i-create-working-gears-in-illustrator">"overflowing the stack"</a>,
             I found <a href="http://woodgears.ca/gear_cutting/template.html">a promising web tool</a> for creating gear templates.
             The tool provided by <a href="http://woodgears.ca/">woodgears.ca</a> allowed me to play around with different gear ratios
             and see what kind of practical problems different ratios would cause. I knew I had to get a ratio of 1:10 for the
@@ -98,7 +98,7 @@
             Eventually I settled on a 6:60 ratio. 5:50 would've been okay too, but with a 8mm shaft diameter the
             structure of the smaller gear in a 5:50 pair would have been very weak. I didn't touch tooth spacing, contact angle
             or any of the more advanced options, as I didn't understand their repercussions and trusted the default config was fine.
-            The only things I set were "Gear 1 teeth" (5), "Gear 2 teeth" (50) and "Shaft hole dia." (8mm).
+            The only things I set were "Gear 1 teeth" (6), "Gear 2 teeth" (60) and "Shaft hole dia." (8mm).
         </p>
         <figure>
             <img src="/assets/images/equatorial-mount-dobsonian/math-and-lasers/woodgears-config.png" alt="Image of the final gear config outlined in the previous paragraph.">
@@ -115,22 +115,22 @@
         <h2>Printing the gears</h2>
         <p>
             Laser-cutting was the obvious choice for me. Acrylic, which is a number one choice in many laser cut studios, is hard and fairly strong,
-            and suited my gear design perfectly. I knew of a good laser-cutting studio in the Kallio area of Helsinki, simply called <a href="http://www.lasercutstudio.com/">Laser Cut Studio</a>,
+            and suited my gear design perfectly. I'd heard of a good laser-cutting studio in the Kallio area of Helsinki, simply called <a href="http://www.lasercutstudio.com/">Laser Cut Studio</a>,
             so finding a location wasn't a problem either. And best of all: for this one, integral part of the project I could just sit back and
             trust the professionals.
         </p>
         <p>
             Sadly I can't submit a website for lasercutting, so I still had to figure out a way to get the design from
             woodgears.ca into a cutter-readable, Adobe Illustrator file (.ai). Woodgears.ca has an option to print the gear design,
-            but unfortunately that didn't cut it for me (no pun intended). Another problem was that the bigger gear wasn't completely visible in the design,
-            as it was overflowing from the &lt;canvas&gt; element it was drawn on. So I had to somehow enlargen the canvas size and then
+            but unfortunately that didn't cut it for me. Another problem was that the bigger gear wasn't completely visible in the design,
+            as it was overflowing from the &lt;canvas&gt; element it was drawn on. So I had to somehow enlarge the canvas size and then
             get the drawn paths out of the canvas into a format Illustrator understands.
         </p>
         <p>
             Eventually I was able to plug the awesome <a href="https://github.com/gliffy/canvas2svg">canvas2svg</a> JS library into
             the woodgears.ca <a href="http://woodgears.ca/gear_cutting/gear.js">gear.js</a>. I extracted the SVG markup through the dev
             console and placed it into its own SVG file. You can find this woodgears.ca SVG support rewrite and the final gear SVGs
-            in my <a href="https://github.com/aapokiiso/equatorial-mount/tree/master/lib/gear-ratios">GitHub</a>.
+            on my <a href="https://github.com/aapokiiso/equatorial-mount/tree/master/lib/gear-ratios">GitHub</a>.
         </p>
         <p>
             Now I just needed to paste the generated SVG files into Illustrator and I was good to go. Luckily I hadn't
@@ -149,7 +149,7 @@
         </figure>
     </section>
 
-    <!--<p><a href="/texts/equatorial-mount-dobsonian/grinding-gears.html">Building an equatorial mount for a Dobsonian telescope - Grinding gears (Part 5)</a></p-->
+    <p><a href="/texts/equatorial-mount-dobsonian/grinding-gears.html">Building an equatorial mount for a Dobsonian telescope - Grinding gears (Part 5)</a></p>
     <p><a href="/">Back to index</a></p>
 </main>
 </body>

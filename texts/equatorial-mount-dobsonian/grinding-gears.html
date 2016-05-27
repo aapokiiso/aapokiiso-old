@@ -14,13 +14,13 @@
     <meta property="og:image" content="http://aapo.kii.so/assets/images/aapokiiso.jpg" />
     <meta property="og:url" content="http://aapo.kii.so/texts/equatorial-mount-dobsonian/grinding-gears.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:published_time" content="2016-04-26T10:00:00.00Z" />
+    <meta property="og:published_time" content="2016-05-27T23:30:00.00Z" />
     <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
 <main id="content">
     <h1>Building an equatorial mount for a Dobsonian-mounted telescope - Grinding gears</h1>
-    <p id="published_on">Published on <time datetime="2016-04-26T10:00:00.00Z">26th of April, 2016</time>.</p>
+    <p id="published_on">Published on <time datetime="2016-05-27T23:30:00.00Z">27th of May, 2016</time>.</p>
     <a href="/">Back to index</a>
     <section id="foreword">
         <p>In this article series, I'm trying to build a working equatorial mount for a 10" Dobsonian telescope.</p>
@@ -34,10 +34,133 @@
             <li>
                 <a href="/texts/equatorial-mount-dobsonian/gear-math.html">Building an equatorial mount for a Dobsonian telescope - Gear math (Part 3)</a>
             </li>
+            <li>
+                <a href="/texts/equatorial-mount-dobsonian/math-and-lasers.html">Building an equatorial mount for a Dobsonian telescope - Math and lasers (Part 4)</a>
+            </li>
         </ol>
     </section>
-    <section id="backtracking">
-        <p></p>
+    <section id="assembly">
+        <p>
+            It took me a surprisingly long time to force myself to write this piece, and like in the previous post,
+            I worked on the things described below already a few weeks back. Nevertheless, I think it's a good idea
+            to look back on the assembly process of the gears, because I'm planning on completing the mount this weekend. Fingers crossed!
+        </p>
+        <p>
+            Getting the gears cut was a huge milestone for this project and myself, as it was the first real materialization
+            of anything I've designed (digital media doesn't count!). After I got the gears, I was anxious to connect them,
+            though I have to say this step was surprisingly easy. I expected the gear ratios to be out of sync, the gears breaking during
+            prototyping and a plethora of other problems, but I really didn't face any big setbacks in this phase.
+        </p>
+        <p>
+            As I discussed in <a href="/texts/equatorial-mount-dobsonian/gear-math.html">Math and lasers (Part 4)</a>,
+            translating the 8.6164s motor rotation period into a 86164s mount rotation period should be done with 4 x 1:10 (1:10000) ratio gear pairs.
+            The motor drives the first small gear, which rotates a large gear, forming a 1:10 gear pair in the process. The next small
+            gear is synced to the speed of the mentioned large gear, again rotating the next large gear, thus forming the second 1:10 gear pair.
+            This repeats 2 more times, and our rotational period has decreased 10000-fold from the motor's sluggish ~8.1s rotation to an unnoticeably slow crawl.
+        </p>
+        <p>
+            My initial plan was to glue a small gear on top of a large gear, each small gear rotating the large gear of the next gear pair.
+            In this setup I would've had 2 non-rotating metal rods as axises, both supporting 2 rotating gear pairs, kind of like a rising staircase.
+            Unfortunately I faced some practical problems with this solution, as none of the glues I tried worked on the acrylic.
+            Maybe acrylic is too smooth, or maybe I just had bad glue. I'm anyway happy I didn't get off so easy, as gluing
+            things often feels like a cheap / non-lasting solution.
+        </p>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/grinding-gears/glue.jpg" alt="An image of superglued gear and the superglue bottle.">
+            <figcaption>Gluing the gears together didn't go as well as expected.</figcaption>
+        </figure>
+        <p>
+            With the glue experiment out of the way, I decided to fasten the gears to the threaded metal rods with good old nuts and washers.
+            However, this solution introduces some new problems. Fastening the gears to the metal rod means they can't rotate independent
+            of the rod, but that the rod has to rotate with the gears. In other words, the rod is rotating, not the gears. This means
+            2 gears with different speeds can't share the same axis of rotation (the metal rod), but each has to have its own metal rod to rotate with.
+        </p>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/grinding-gears/progress-panorama.jpg" alt="Progress picture of fastening the gears to the metal rod shafts.">
+            <figcaption>I fastened the gears to the 8mm threaded metal rods with nuts and washers from both sides of the gear.</figcaption>
+        </figure>
+        <p>
+            I was worried 4 axises would take a lot of space, thus forcing the mount to be larger, but fortunately the increase wasn't too dramatic.
+            I figured the easiest way to setup the gears on the mount was going to be in square formation, each axis acting as a corner of the square.
+            As the distance between 2 axises was 158mm (measured from <a href="https://github.com/aapokiiso/equatorial-mount/blob/master/lib/gear-ratios/gears.ai">the Illustrator file</a>),
+            one side of the square would be 158mm + 294mm = 452mm (the radius of the larger gear is 147mm, which "overflows" all around the axis, thus the 147mm * 2 = 294mm).
+        </p>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/grinding-gears/gears-birdview.jpg" alt="The square gear setup viewed from the top.">
+            <figcaption>The square gear setup viewed from the top. Each side of the "gear rectangle" is around 450mm, or 45cm long.</figcaption>
+        </figure>
+        <p>
+            I played around a bit with the square setup, and it worked straight from the get go. So as I crossed the horizontal plane off my mental
+            checklist, I started to think vertically. Based on <a href="https://www.sparkfun.com/datasheets/Robotics/SM-42BYG011-25.pdf">the motor's datasheet</a>,
+            the motor is 58mm high. The <a href="http://www.exp-tech.de/aluminum-flex-shaft-coupler-5mm-to-8mm">motor-to-rod coupler</a> I got is 25mm high, although
+            the motor shaft slides about halfway inside of it. On top of that I need a reasonable length of steel rod onto which to fasten the first small gear with nuts.
+            As the height of each nut + washer combo is 8mm, I decided to ballpark the base of the first gear at 80mm off the plywood layer (58mm + (25mm / 2) + 8mm = 78.5mm ~ 80mm).
+        </p>
+        <p>
+            Each gear is 5mm thick. As mentioned, we start from the height of 80mm,
+            add to that the 5mm from the first gear, and then an additional 8mm from the fastening nut + washer combo. This gives us a minimum height of 93mm for the first axis the
+            first small gear is rotating, since of course the first big gear has to be on the same level (80mm) as the first small gear (which, to reiterate, the motor is rotating). Add
+            to that a padding of 20mm for fastening the axis (metal rod) to the plywood base, and we have a shaft height of 113mm! I decided to round that up to 120mm, just in case of
+            unexpected plywood thickness.
+        </p>
+        <p>
+            The last shaft is a bit different, as it is also rotating the topmost plywood layer to achieve mount rotation. That's why it has a length of 150mm, so an additional 30mm
+            for fastening it firmly to the topmost plywood.
+        </p>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/grinding-gears/gears-sideview.jpg" alt="Gears viewed from the side.">
+            <figcaption>The gear setup viewed from the side, highlighting the height differences outlined above and below.</figcaption>
+        </figure>
+        <p>
+            Below is a quick rundown of the vertical configuration of the gears. Gears on a single shaft are separated by 10mm of padding (2mm washer + 6mm nut + 2mm washer).
+            The 2nd shaft is an exception, because I had to put the small gear of the 1st shaft below the large gear due to shaft height limitations, so the 2nd shaft has to basically
+            jump a double amount between its gears not to intersect with the gears of the 1st shaft.
+        </p>
+        <ul>
+            <li>
+                <p>0th shaft (the motor shaft)</p>
+                <ul>
+                    <li>1st gear (small): 80mm</li>
+                </ul>
+            </li>
+            <li>
+                <p>1st shaft</p>
+                <ul>
+                    <li>1st gear (small): 65mm</li>
+                    <li>2nd gear (large): 80mm</li>
+                </ul>
+            </li>
+            <li>
+                <p>2nd shaft (note: has an extra 6mm nut between gears as to not intersect with the 2nd gear of the 1st shaft)</p>
+                <ul>
+                    <li>1st gear (large): 65mm</li>
+                    <li>2nd gear (small): 86mm</li>
+                </ul>
+            </li>
+            <li>
+                <p>3rd shaft</p>
+                <ul>
+                    <li>1st gear (large): 86mm</li>
+                    <li>2nd gear (small): 101mm</li>
+                </ul>
+            </li>
+            <li>
+                <p>4th shaft (the mount shaft)</p>
+                <ul>
+                    <li>1st gear (large): 101mm</li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            For prototyping purposes, I built the above setup on top of a cardboard box, fastening the shafts to the cardboard. Everything worked surprisingly
+            well, and it was a really great feeling to see a slight rotation even in the 3rd shaft when rotating the 1st shaft with my finger.
+            I also tried to get a 10000-fold increase in the 1st shaft's rotational speed by trying to rotate the 4th shaft with my hand. Sadly it would've required an
+            equally increased force to rotate it, and I don't think neither the cardboard nor my arms could survive something like that!
+        </p>
+        <figure>
+            <img src="/assets/images/equatorial-mount-dobsonian/grinding-gears/gears-finished.jpg" alt="The finished gear setup build on top of a cardboard box.">
+            <figcaption>The finished gear setup build on top of a cardboard box. It is still missing the 0th shaft, aka the motor, but I was able to rotate the gears by hand.</figcaption>
+        </figure>
     </section>
 
     <!--<p><a href="/texts/equatorial-mount-dobsonian/xxx.html">Building an equatorial mount for a Dobsonian telescope - Xxx (Part 6)</a></p>-->
