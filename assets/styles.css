@@ -2,12 +2,12 @@ body {
   background-color: #fff;
 }
 
-#content {
+.content {
   max-width: 30em;
   margin: 0 auto;
 }
 
-#foreword {
+.foreword {
   font-style: italic;
 }
 
@@ -18,7 +18,7 @@ figure img {
 /* Responsive styles */
 
 @media (min-width: 1200px) {
-  #content {
+  .content {
     margin-top: 5%;
     margin-bottom: 5%;
   }
