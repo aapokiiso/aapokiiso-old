@@ -1,4 +1,6 @@
 index.html index.html
+offline.html offline.html
+pwa-precache-sw.js.php pwa-precache-sw.js.php
 assets assets
 texts texts
 recipes recipes

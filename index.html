@@ -64,5 +64,18 @@
     <h2>Contact info</h2>
     <p>You can email me at <a href="mailto:aapo@kii.so">aapo@kii.so</a>.</p>
 </main>
+
+<!-- Offline pre-caching setup -->
+<script>
+window.addEventListener('load', function () {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/pwa-precache-sw.js.php')
+            .catch(function (err) {
+                console.error(err);
+            });
+    }
+});
+</script>
+
 </body>
 </html>
