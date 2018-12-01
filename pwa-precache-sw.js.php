@@ -2,7 +2,7 @@
 header('Content-Type: application/javascript');
 
 $apiUrl = 'https://aapo.kii.so:8080';
-$clientId = 'd021228f-c931-4a3d-ba85-deafde2362be';
+$clientId = '030118b2-74f0-4b4d-8e2b-9fcc2640e66e';
 
 $client = json_decode(file_get_contents("$apiUrl/client/$clientId"));
 
